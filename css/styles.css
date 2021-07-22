@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root{
+    --main-color: #162252;
+    --color-dark: #1d2231;
+    --text-grey: #8390a2;
+
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+}
+
+.navigation{
+    position: fixed;
+    width:300px;
+    height: 900px;
+    background: #0C2340;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width:60px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+
+}
+
+.navigation ul li:hover{
+    background-color: #0CAFFF;
+    
+
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background: transparent;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;  
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fa{
+    color:#fff;
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px; 
+    min-height: 500vh;
+    background-color: #f5f5f5f5;
+    transition: 0.3s;
+}
+
+.main.active{
+    
+    width:calc(100% - 60px);
+    left: 60px;
+}
+
+.main .topbar{
+    width: 100%;
+    background-color:  #0C2340 !important;
+    height:60px;
+    padding: 0 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle{
+    position:relative;
+    width: 60px;
+    height: 62px;
+    
+    cursor: pointer;
+}
+
+.toggle::before{
+    content:'\f0c9';
+    font-family: fontAwesome;
+    position:absolute;
+    width:100%;
+    height:100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color:#EEE;
+
+
+}
+
+.user{
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor:pointer
+}
+
+.user img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.cardBox{
+    position: relative;
+    width:85%;
+    padding:1px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card{
+    position: relative;
+    border-radius: 5px;
+    background-color: #fff;
+    height: auto;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 5px;
+}
+
+
+.cardBox .card .cardName{
+    color:#999;
+}
+
+.cardBox .iconBox{
+    font-size: 2.5em;
+    color:#0C2340;
+}
+
+
+.card:last-child,
+.card:last-child div:first-child,
+.card:last-child div:last-child{
+    color:#fff;
+    background-color: #0C2340;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+
+
+  .charts__left {
+    padding: 25px;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-left: 10px;
+  }
+
+  
+  
+  .charts__left__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .charts__left__title > div > h1 {
+    font-size: 20px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+  }
+  
+  .charts__left__title > div > p {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a5aaad;
+  }
+  
+  .charts__left__title > i {
+    color: #ffffff;
+    font-size: 15px;
+    background: #0ab10a;
+    border-radius: 200px 0px 200px 200px;
+    -moz-border-radius: 200px 0px 200px 200px;
+    -webkit-border-radius: 200px 0px 200px 200px;
+    border: 0px solid #000000;
+    padding: 15px;
+  }
+
+  @media only screen and (max-width: 855px) {
+    .cardBox {
+        margin-left: 10px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+  
+    .charts {
+        
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+  }
